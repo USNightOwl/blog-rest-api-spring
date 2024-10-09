@@ -1,4 +1,4 @@
-package com.nxhawk.blogapi.service;
+package com.nxhawk.blogapi.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

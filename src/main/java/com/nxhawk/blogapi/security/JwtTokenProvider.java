@@ -1,4 +1,4 @@
-package com.nxhawk.blogapi.service;
+package com.nxhawk.blogapi.security;
 
 import com.nxhawk.blogapi.exception.BlogAPIException;
 import io.jsonwebtoken.*;

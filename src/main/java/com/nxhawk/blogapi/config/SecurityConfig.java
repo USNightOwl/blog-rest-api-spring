@@ -1,7 +1,7 @@
 package com.nxhawk.blogapi.config;
 
-import com.nxhawk.blogapi.service.JwtAuthenticationEntryPoint;
-import com.nxhawk.blogapi.service.JwtAuthenticationFilter;
+import com.nxhawk.blogapi.security.JwtAuthenticationEntryPoint;
+import com.nxhawk.blogapi.security.JwtAuthenticationFilter;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;

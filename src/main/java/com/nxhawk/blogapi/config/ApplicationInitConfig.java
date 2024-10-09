@@ -8,11 +8,17 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.modelmapper.ModelMapper;
 
 import java.util.List;
 
 @Configuration
 public class ApplicationInitConfig {
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
     @Bean
     public ApplicationRunner initDatabase(RoleRepository roleRepository, UserRepository userRepository,
                                           PasswordEncoder passwordEncoder) {

@@ -2,7 +2,10 @@ package com.nxhawk.blogapi.service;
 
 import com.nxhawk.blogapi.payload.CategoryDto;
 
+import java.util.List;
+
 public interface CategoryService {
     CategoryDto addCategory(CategoryDto categoryDto);
-
+    CategoryDto getCategory(Long categoryId);
+    List<CategoryDto> getAllCategories();
 }

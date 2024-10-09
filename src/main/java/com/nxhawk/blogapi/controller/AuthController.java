@@ -1,5 +1,7 @@
 package com.nxhawk.blogapi.controller;
 
+import com.nxhawk.blogapi.payload.JWTAuthResponse;
+import com.nxhawk.blogapi.payload.LoginDto;
 import com.nxhawk.blogapi.payload.RegisterDto;
 import com.nxhawk.blogapi.service.AuthService;
 import jakarta.validation.Valid;
@@ -16,6 +18,15 @@ public class AuthController {
     private final AuthService authService;
     public AuthController(AuthService authService) {
         this.authService = authService;
+    }
+    @PostMapping(value = {"/login", "/signin"})
+    public ResponseEntity<JWTAuthResponse> login(@Valid @RequestBody LoginDto loginDto){
+        String token = authService.login(loginDto);
+
+        JWTAuthResponse jwtAuthResponse = new JWTAuthResponse();
+        jwtAuthResponse.setAccessToken(token);
+
+        return ResponseEntity.ok(jwtAuthResponse);
     }
 
     @PostMapping(value = {"/register", "/signup"})
